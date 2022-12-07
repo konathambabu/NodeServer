@@ -1,0 +1,18 @@
+<button onclick="fnGetData()">Click</button>
+<h1></h1>
+
+<script>
+     function fnGetData(){
+                          var httpObj=new XMLHttpRequest();
+                          httpObj.open('get','http://localhost:2020/student/std-get');
+                          httpObj.send();
+                          httpObj.onload=function(){
+                              var res=httpObj.responseText;
+                              document.querySelector("h1").innerText=res;
+                              console.log(res);
+                          }
+                          httpObj.onerror=function(){
+                              console.log('something wentwrong Babu K');
+                          }
+                      }
+</script>
